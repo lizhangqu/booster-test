@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url 'https://dl.google.com/dl/android/maven2/'
+        }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.1.2"
+    }
+    configurations.all {
+        it.resolutionStrategy.cacheDynamicVersionsFor(5, 'minutes')
+        it.resolutionStrategy.cacheChangingModulesFor(0, 'seconds')
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven {
+            url 'https://dl.google.com/dl/android/maven2/'
+        }
+    }
+}
+
+
+subprojects {
+    configurations.all {
+        resolutionStrategy.cacheDynamicVersionsFor(5, 'minutes')
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+}
+
+ext {
+    global_compileSdkVersion = COMPILE_SDK_VERSION.toInteger()
+    global_buildToolsVersion = BUILD_TOOLS_VERSION
+    global_minSdkVersion = MIN_SDK_VERSION.toInteger()
+    global_targetSdkVersion = TARGET_SDK_VERSION.toInteger()
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

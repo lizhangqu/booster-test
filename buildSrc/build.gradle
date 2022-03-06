@@ -1,0 +1,22 @@
+apply plugin: 'groovy'
+apply plugin: 'idea'
+targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://dl.google.com/dl/android/maven2/'
+    }
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+
+    implementation "com.android.tools.build:gradle:7.1.2"
+    implementation "com.didiglobal.booster:booster-android-gradle-api:4.4.0"
+
+}
+
+
