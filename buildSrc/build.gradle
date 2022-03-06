@@ -15,7 +15,7 @@ dependencies {
     implementation localGroovy()
 
     implementation "com.android.tools.build:gradle:7.1.2"
-    implementation "com.didiglobal.booster:booster-android-gradle-api:4.4.0"
+    implementation "com.didiglobal.booster:booster-android-gradle-api:4.5.1"
 
 }
 
